@@ -18,7 +18,7 @@ import threading
 import logging
 from logging.handlers import RotatingFileHandler
 
-base_path: str
+base_path: str = None
 args: argparse.Namespace
 dispatcher_type: type[MqttDispatcher]
 main_logger: logging.Logger
@@ -263,8 +263,8 @@ class MochadClient:
 
     """
 
-    pl_houseunit: str
-    reader: SocketReader
+    pl_houseunit = None
+    reader = None
 
     def __init__(self, host, logger, dispatcher, house_codes, killer, legacy):
         self.host = host
