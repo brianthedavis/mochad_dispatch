@@ -1,6 +1,6 @@
 from setuptools import setup
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 REQUIRES = [
     "paho-mqtt",
@@ -25,6 +25,6 @@ setup(
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Operating System :: POSIX :: Linux",
-        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.11",
     ],
 )

@@ -1,3 +1,8 @@
-FROM jfloff/alpine-python:3.4
+FROM python:3.11-alpine
+
 COPY . /src
-RUN cd /src; python setup.py install
+
+RUN cd /src && \
+    /usr/local/bin/python3 setup.py install
+
+ENTRYPOINT [ "/usr/local/bin/mochad_dispatch", "-f" ]
