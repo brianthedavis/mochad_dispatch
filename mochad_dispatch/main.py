@@ -11,7 +11,6 @@ import argparse
 import urllib.parse
 import paho.mqtt.client as mqtt
 import json
-from paho.mqtt.enums import CallbackAPIVersion
 
 import threading
 
@@ -124,7 +123,7 @@ class MqttDispatcher:
         self.port = uri.port if uri.port else 1883
         mqtt_client_id = "mochadc/{}-{}".format(os.getpid(), socket.gethostname())
         self.logger.info(f"mqtt_client_id: {mqtt_client_id}, mqtt host: {self.host}, mqtt port: {self.port}")
-        self.mqttc = mqtt.Client(CallbackAPIVersion.VERSION2, mqtt_client_id)
+        self.mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, mqtt_client_id)
         if user and password:
             self.logger.info(f"mqtt connection with username and password.")
             self.mqttc.username_pw_set(user, password)
