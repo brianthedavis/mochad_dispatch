@@ -62,7 +62,7 @@ What about house code filtering?
 --------------------------------
 You can also add filtering by house code as well using the -c/--housecodes optino and list your codes that you want to use. The default is all A thru P. To use just add -c AD or any other combination of house codes.
 ::
-    
+
     $ mochad_dispatch -s hal9000 -c AD mqtt://mqtt.example.com:1883
 
 Home Assistant Integration
@@ -106,7 +106,7 @@ Build the docker image (using the Dockerfile based on the jfloff/alpine-python i
 ::
 
     $ docker build -t mochad_dispatch .
-    $ docker run -d -it mochad_dispatch mochad_dispatch -s hal9000 mqtt://mqtt.example.com:1883 -f
+    $ docker run -d mochad_dispatch -s hal9000 mqtt://mqtt.example.com:1883 -f
 
 Dockerized App Full Stack Example
 =================================
